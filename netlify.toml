@@ -1,0 +1,11 @@
+[build]
+  # 1. Installe les outils Python nécessaires
+  # 2. Exécute notre script qui génère la page d'accueil
+  command = "pip install -r requirements.txt && python build.py"
+  
+  # Le dossier final que Netlify doit publier
+  publish = "public"
+
+[build.environment]
+  # On dit à Netlify d'utiliser une version récente de Python
+  PYTHON_VERSION = "3.11"

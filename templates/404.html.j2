@@ -1,0 +1,13 @@
+{% extends "base.html.j2" %}
+{% set page_url = self.path %}
+{% block title %}Page non trouvée - {{ site_name }}{% endblock %}
+
+{% block content %}
+    <h1>Erreur 404 - Oups !</h1>
+    <p>La page que vous cherchez semble s'être perdue dans l'horizon.</p>
+    <p><a href="/">Retourner à l'accueil</a></p>
+    <div>
+        <input type="search" placeholder="Rechercher un article...">
+        <button>Rechercher</button>
+    </div>
+{% endblock %}

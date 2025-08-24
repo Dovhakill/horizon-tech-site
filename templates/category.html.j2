@@ -1,0 +1,23 @@
+{% extends "base.html.j2" %}
+
+{% block title %}{{ category_name | capitalize }} - L'Horizon Libre{% endblock %}
+
+{% block content %}
+<section>
+    <h1 class="text-4xl font-bold mb-8">{{ category_name | capitalize }}</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {% for article in articles %}
+        <div class="bg-white rounded-lg shadow-md">
+            <a href="article/{{ article.filename }}"><img src="{{ article.image_url }}" alt="{{ article.title }}" class="article-card-img"></a>
+            <div class="p-6">
+                <h3 class="font-bold text-xl mt-2 mb-3">{{ article.title }}</h3>
+                <p class="text-gray-500 text-xs mb-3">{{ article.date_human }}</p>
+                <a href="article/{{ article.filename }}" class="text-sm font-semibold text-blue-800 hover:underline">Lire la suite</a>
+            </div>
+        </div>
+        {% else %}
+        <p>Aucun article dans cette catégorie.</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

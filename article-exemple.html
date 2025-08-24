@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titre de l'Article - L'Horizon Libre</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23B91C1C' stroke='%23111827' stroke-width='2'/%3E%3Cg transform='translate(50, 50) scale(0.65) translate(-55, -55)'%3E%3Cpath d='M 10 85 Q 55 100 85 25 Q 70 50 50 55 Q 25 75 10 85 Z' fill='white'/%3E%3Cpath d='M 78 32 Q 95 25 95 15 L 85 25 Z' fill='%231E40AF'/%3E%3C/g%3E%3C/svg%3E">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .prose h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose p { font-size: 1.125rem; line-height: 1.75; margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-2">
+            <a href="/" title="Accueil - L'Horizon Libre">
+                <svg class="h-14 sm:h-16 w-auto" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs><style> .serif-final { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 20px; fill: #111827;} </style></defs>
+                    <rect y="50" width="200" height="4" fill="#1E40AF"/><circle cx="100" cy="50" r="30" fill="#B91C1C"/><g transform="translate(100, 50) scale(0.5) translate(-55, -55)"><path d="M 10 85 Q 55 100 85 25 Q 70 50 50 55 Q 25 75 10 85 Z" fill="white"/><path d="M 78 32 Q 95 25 95 15 L 85 25 Z" fill="#1E40AF"/></g><text x="50" y="85" class="serif-final">L'Horizon Libre</text>
+                </svg>
+            </a>
+            <a href="/" class="text-blue-800 hover:text-blue-900 font-semibold inline-flex items-center"><i data-feather="arrow-left" class="mr-2 h-4 w-4"></i>Retour à l'accueil</a>
+        </div>
+    </header>
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        <article class="max-w-3xl mx-auto">
+            <header class="mb-8">
+                <p class="text-sm font-semibold text-blue-800 uppercase">Catégorie de l'article</p>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-2 leading-tight">Titre de l'Article de Démonstration</h1>
+                <p class="mt-4 text-lg text-gray-500">Publié le 21 juillet 2025 par Aurore & la Rédaction</p>
+            </header>
+            <figure class="mb-8">
+                <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=800&auto=format&fit=crop" alt="Image principale de l'article" class="rounded-lg shadow-lg w-full h-auto object-cover">
+                <figcaption class="text-center text-sm text-gray-500 mt-2">Légende de l'image descriptive.</figcaption>
+            </figure>
+            <div class="prose max-w-none">
+                <p>Ceci est le paragraphe d'introduction, aussi appelé chapô. Il résume les points clés de l'article et doit donner envie au lecteur de poursuivre sa lecture.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.</p>
+                <h2>Un sous-titre pour structurer</h2>
+                <p>Mauris ac felis vel velit tristique imperdiet. Donec at pede. Etiam vel neque nec dui dignissim bibendum. Vivamus id enim. Phasellus neque orci, porta a, aliquet quis, semper a, massa.</p>
+            </div>
+            <footer class="mt-12 pt-6 border-t border-gray-200 text-center">
+                <p class="text-gray-600">Vous avez repéré une erreur dans cet article ?</p>
+                <a href="mailto:contact@horizon-libre.net?subject=Signalement d'erreur sur l'article : Titre de l'Article de Démonstration" 
+                   class="inline-block mt-2 bg-red-100 text-red-700 font-semibold px-4 py-2 rounded-lg hover:bg-red-200 transition text-sm">
+                   <i data-feather="alert-triangle" class="inline-block w-4 h-4 mr-2"></i>Signaler une erreur
+                </a>
+            </footer>
+        </article>
+    </main>
+    <script>feather.replace()</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% extends "base.html.j2" %}
+{% set page_url = self.path %}
+{% block title %}Politique de Cookies - {{ site_name }}{% endblock %}
+
+{% block content %}
+    <h1>Gestion des Cookies</h1>
+    <p>Ce site utilise des cookies pour fonctionner et améliorer votre expérience.</p>
+    
+    <h2>Types de cookies utilisés</h2>
+    <ul>
+        <li><strong>Nécessaires :</strong> Indispensables au fonctionnement du site (ex: sauvegarde de votre consentement).</li>
+        <li><strong>Analytics :</strong> Nous aident à comprendre comment vous utilisez le site pour l'améliorer (ex: Google Analytics, cookies `_ga`, `_gid`).</li>
+    </ul>
+
+    <h2>Votre consentement</h2>
+    <p>Votre consentement est demandé via la bannière lors de votre première visite. Vous pouvez retirer votre consentement à tout moment en cliquant sur le bouton ci-dessous. Le retrait du consentement n'affecte pas la licéité du traitement basé sur le consentement avant ce retrait.</p>
+    <button onclick="localStorage.removeItem('cookie_consent'); window.location.reload();">Révoquer le consentement aux cookies</button>
+{% endblock %}

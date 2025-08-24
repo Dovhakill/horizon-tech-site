@@ -1,0 +1,22 @@
+{% extends "base.html.j2" %}
+{% set page_url = self.path %}
+{% block title %}Contact - {{ site_name }}{% endblock %}
+
+{% block content %}
+    <h1>Nous Contacter</h1>
+    <p>Pour toute question, veuillez nous envoyer un email à <a href="mailto:{{ contact_email }}">{{ contact_email }}</a> ou utiliser le formulaire ci-dessous.</p>
+    
+    <form action="..." method="POST">
+        <label for="name">Nom :</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email :</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="message">Message :</label><br>
+        <textarea id="message" name="message" required></textarea><br>
+        
+        <input type="checkbox" id="newsletter_signup" name="newsletter_signup">
+        <label for="newsletter_signup">Je souhaite m'inscrire à la newsletter. J'accepte que mon email soit utilisé pour recevoir les publications de {{ site_name }}. (<a href="/privacy-policy.html" target="_blank">Voir notre politique de confidentialité</a>).</label><br>
+        
+        <button type="submit">Envoyer</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}L'Horizon Libre{% endblock %}</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23B91C1C' stroke='%23111827' stroke-width='2'/%3E%3Cg transform='translate(50, 50) scale(0.65) translate(-55, -55)'%3E%3Cpath d='M 10 85 Q 55 100 85 25 Q 70 50 50 55 Q 25 75 10 85 Z' fill='white'/%3E%3Cpath d='M 78 32 Q 95 25 95 15 L 85 25 Z' fill='%231E40AF'/%3E%3C/g%3E%3C/svg%3E">
+    {% block meta %}{% endblock %}
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .article-card-img { height: 12rem; width: 100%; object-fit: cover; }
+        .article-featured-image { max-height: 500px; width: 100%; object-fit: cover; margin: auto; border-radius: 0.5rem; }
+        #search-results { max-height: 300px; overflow-y: auto; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-2">
+                <a href="/" title="Accueil - L'Horizon Libre"><svg class="h-14 sm:h-16 w-auto" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg"><defs><style> .serif-final { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 20px; fill: #111827;} </style></defs><rect y="50" width="200" height="4" fill="#1E40AF"/><circle cx="100" cy="50" r="30" fill="#B91C1C"/><g transform="translate(100, 50) scale(0.5) translate(-55, -55)"><path d="M 10 85 Q 55 100 85 25 Q 70 50 50 55 Q 25 75 10 85 Z' fill='white'/><path d="M 78 32 Q 95 25 95 15 L 85 25 Z" fill="#1E40AF"/></g><text x="50" y="85" class="serif-final">L'Horizon Libre</text></svg></a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="text-gray-600 hover:text-blue-800 transition">Accueil</a>
+                    <a href="/politique.html" class="text-gray-600 hover:text-blue-800 transition">Politique</a>
+                    <a href="/culture.html" class="text-gray-600 hover:text-blue-800 transition">Culture</a>
+                    <a href="/technologie.html" class="text-gray-600 hover:text-blue-800 transition">Tech</a>
+                    <a href="/a-propos.html" class="text-gray-600 hover:text-blue-800 transition">À Propos</a>
+                    <a href="/contact.html" class="text-gray-600 hover:text-blue-800 transition">Contact</a>
+                </nav>
+                <div class="relative">
+                    <input type="search" id="search-input" placeholder="Rechercher..." class="border rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <div id="search-results" class="hidden absolute top-full left-0 right-0 w-72 bg-white border rounded-lg shadow-lg mt-2 p-2 z-50"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 mt-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <p class="text-center text-sm text-gray-500">&copy; {{ current_year }} {{ site_name }}. Tous droits réservés.</p>
+        </div>
+    </footer>
+    
+    <script>feather.replace();</script>
+    <script>
+    (function() {
+        const searchInput = document.getElementById('search-input');
+        const searchResults = document.getElementById('search-results');
+        let searchIndex = [];
+
+        fetch('/search-index.json')
+            .then(response => response.json())
+            .then(data => { searchIndex = data; })
+            .catch(error => console.error("Erreur de chargement de l'index:", error));
+
+        searchInput.addEventListener('input', () => {
+            const query = searchInput.value.trim().toLowerCase();
+            if (query.length < 2) {
+                searchResults.classList.add('hidden');
+                return;
+            }
+            const results = searchIndex.filter(item => item.title.toLowerCase().includes(query) || item.description.toLowerCase().includes(query));
+            searchResults.innerHTML = '';
+            if (results.length > 0) {
+                results.slice(0, 5).forEach(result => {
+                    const item = document.createElement('a');
+                    item.href = result.url;
+                    item.className = 'block p-2 text-sm text-gray-800 hover:bg-gray-100 rounded';
+                    item.textContent = result.title;
+                    searchResults.appendChild(item);
+                });
+            } else {
+                searchResults.innerHTML = '<p class="p-2 text-sm text-gray-500">Aucun résultat.</p>';
+            }
+            searchResults.classList.remove('hidden');
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!searchResults.contains(e.target) && e.target !== searchInput) {
+                searchResults.classList.add('hidden');
+            }
+        });
+    })();
+    </script>
+</body>
+</html>

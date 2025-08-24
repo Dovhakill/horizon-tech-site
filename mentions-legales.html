@@ -1,0 +1,28 @@
+{% extends "base.html.j2" %}
+{% set page_url = self.path %}
+{% block title %}Mentions Légales - {{ site_name }}{% endblock %}
+
+{% block content %}
+    <h1>Mentions Légales</h1>
+    
+    <h2>1. Éditeur du Site</h2>
+    <p>
+        <strong>Nom du site :</strong> {{ site_name }}<br>
+        <strong>Responsable de la publication :</strong> {{ editor_name }}<br>
+        <strong>Adresse :</strong> {{ editor_address }}<br>
+        <strong>Email :</strong> {{ contact_email }}<br>
+        <strong>SIREN :</strong> {{ company_siren or 'Non applicable' }}<br>
+        <strong>RCS :</strong> {{ company_rcs or 'Non applicable' }}
+    </p>
+
+    <h2>2. Hébergement</h2>
+    <p>
+        <strong>Hébergeur :</strong> {{ host_name }}<br>
+        <strong>Adresse :</strong> {{ host_address }}
+    </p>
+
+    <h2>3. Propriété Intellectuelle</h2>
+    <p>
+        L'ensemble de ce site relève de la législation sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés. Les articles générés par l'IA "Aurore" sont des œuvres dérivées basées sur des sources tierces et sont la propriété de l'éditeur du site. Le crédit des images utilisées est mentionné sur chaque article.
+    </p>
+{% endblock %}

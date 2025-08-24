@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique - L'Horizon Libre</title>
+    <meta name="description" content="Toute l'actualité et les analyses politiques par L'Horizon Libre.">
+    
+    <link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23B91C1C' stroke='%23111827' stroke-width='2'/%3E%3Cg transform='translate(50, 50) scale(0.65) translate(-55, -55)'%3E%3Cpath d='M 10 85 Q 55 100 85 25 Q 70 50 50 55 Q 25 75 10 85 Z' fill='white'/%3E%3Cpath d='M 78 32 Q 95 25 95 15 L 85 25 Z' fill='%231E40AF'/%3E%3C/g%3E%3C/svg%3E">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .article-card-img { height: 12rem; width: 100%; object-fit: cover; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+             <div class="flex justify-between items-center py-2">
+                 <div class="flex items-center">
+                     <a href="/" title="Accueil - L'Horizon Libre">
+                         <svg class="h-14 sm:h-16 w-auto" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs><style> .serif-final { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 20px; fill: #111827;} </style></defs>
+                            <rect y="50" width="200" height="4" fill="#1E40AF"/>
+                            <circle cx="100" cy="50" r="30" fill="#B91C1C"/>
+                            <g transform="translate(100, 50) scale(0.5) translate(-55, -55)">
+                                <path d="M 10 85 Q 55 100 85 25 Q 70 50 50 55 Q 25 75 10 85 Z" fill="white"/>
+                                <path d="M 78 32 Q 95 25 95 15 L 85 25 Z" fill="#1E40AF"/>
+                            </g>
+                            <text x="50" y="85" class="serif-final">L'Horizon Libre</text>
+                        </svg>
+                     </a>
+                 </div>
+                 <nav class="hidden md:flex items-center space-x-8">
+                     <a href="/" class="text-gray-600 hover:text-blue-800 transition">Accueil</a>
+                     <a href="/politique.html" class="text-blue-800 font-bold hover:text-blue-800 transition">Politique</a>
+                     <a href="/culture.html" class="text-gray-600 hover:text-blue-800 transition">Culture</a>
+                     <a href="/technologie.html" class="text-gray-600 hover:text-blue-800 transition">Tech</a>
+                     <a href="/a-propos.html" class="text-gray-600 hover:text-blue-800 transition">À Propos</a>
+                     <a href="/contact.html" class="text-gray-600 hover:text-blue-800 transition">Contact</a>
+                 </nav>
+                 </div>
+         </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        <section id="category-header">
+            <h1 class="text-4xl font-bold text-gray-900 leading-tight border-b-4 border-blue-800 pb-4">
+                Catégorie : Politique
+            </h1>
+        </section>
+
+        <section id="recent-articles" class="mt-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <a href="/articles/tension-a-gaza.html">
+                        <img src="/img/tension-gaza.jpg" alt="Image illustrant le conflit à Gaza" class="article-card-img">
+                    </a>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-blue-800 uppercase">Politique</span>
+                        <h3 class="font-bold text-xl mt-2 mb-3">Tensions à Gaza : analyse de la situation</h3>
+                        <a href="/articles/tension-a-gaza.html" class="text-sm font-semibold text-blue-800 hover:underline">Lire la suite</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <a href="#"><img src="https://images.unsplash.com/photo-1512314889357-e157c22f938d?q=80&w=400&auto=format&fit=crop" alt="Image pour un article sur la politique" class="article-card-img"></a>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold text-blue-800 uppercase">Politique</span>
+                        <h3 class="font-bold text-xl mt-2 mb-3">Un autre titre d'article politique</h3>
+                        <a href="#" class="text-sm font-semibold text-blue-800 hover:underline">Lire la suite</a>
+                    </div>
+                </div>
+
+                </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 mt-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-xl font-bold text-white">L'Horizon Libre</h3>
+                    <p class="mt-4 text-gray-400">Un média 100% indépendant, financé par ses lecteurs.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white uppercase tracking-wider">Navigation</h4>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="/a-propos.html" class="hover:text-white transition">À Propos</a></li>
+                        <li><a href="/contact.html" class="hover:text-white transition">Contact</a></li>
+                        <li><a href="https://fr.tipeee.com/lhorizon-libre/" target="_blank" class="hover:text-white transition">Nous soutenir</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white uppercase tracking-wider">Légal</h4>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="/mentions-legales.html" class="hover:text-white transition">Mentions légales</a></li>
+                        <li><a href="/politique-confidentialite.html" class="hover:text-white transition">Confidentialité</a></li>
+                        <li><a href="/charte-verification.html" class="hover:text-white transition">Notre Charte de Vérification</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-8 flex flex-col sm:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500">&copy; 2025 L'Horizon Libre. Tous droits réservés.</p>
+                <div class="flex space-x-4 mt-4 sm:mt-0">
+                    <a href="https://x.com/MediaHorizonL" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+      feather.replace();
+    </script>
+</body>
+</html>

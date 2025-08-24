@@ -1,0 +1,40 @@
+{% extends "base.html.j2" %}
+{% set page_url = self.path %}
+{% block title %}Politique de Confidentialité - {{ site_name }}{% endblock %}
+
+{% block content %}
+    <h1>Politique de Confidentialité</h1>
+    <p>Date de mise à jour : {{ "now"|date("d M Y") }}</p>
+
+    <h2>Responsable du traitement</h2>
+    <p>Le responsable du traitement des données est {{ editor_name }}, contactable à {{ rgpd_contact_email }}.</p>
+
+    <h2>Finalités du traitement des données</h2>
+    <ul>
+        <li><strong>Newsletter :</strong> Envoi de nos publications (base légale : consentement). Données : adresse email.</li>
+        <li><strong>Analyse d'audience :</strong> Mesure de la fréquentation du site (base légale : consentement). Données : identifiants de cookies, données de navigation.</li>
+        <li><strong>Formulaire de contact :</strong> Répondre à vos demandes (base légale : intérêt légitime). Données : nom, email, message.</li>
+    </ul>
+
+    <h2>Destinataires et Sous-traitants</h2>
+    <p>Vos données sont traitées par nous et nos sous-traitants techniques :</p>
+    <ul>
+        <li>Hébergement : {{ host_name }}</li>
+        {% if analytics_provider %}<li>Analyse d'audience : {{ analytics_provider }}</li>{% endif %}
+        {% if mail_provider %}<li>Newsletter : {{ mail_provider }}</li>{% endif %}
+        {% if payment_provider %}<li>Paiements : {{ payment_provider }}</li>{% endif %}
+    </ul>
+    <p>Certains de ces sous-traitants (ex. Google, Netlify) peuvent transférer des données hors de l'Union Européenne. Ces transferts sont encadrés par des Clauses Contractuelles Types (SCC) pour garantir un niveau de protection adéquat.</p>
+    
+    <h2>Durées de conservation</h2>
+    <ul>
+        <li><strong>Newsletter :</strong> Jusqu'à votre désinscription, ou 3 ans après notre dernier contact.</li>
+        <li><strong>Cookies d'analyse :</strong> 13 mois maximum.</li>
+    </ul>
+
+    <h2>Vos droits</h2>
+    <p>Vous disposez des droits d'accès, de rectification, d'effacement, d'opposition et de portabilité de vos données. Pour les exercer, contactez-nous à {{ rgpd_contact_email }}.</p>
+
+    <h2>Utilisation de l'IA Aurore</h2>
+    <p>Par souci de transparence, nous informons nos lecteurs que les articles publiés sur ce site sont générés par notre IA "Aurore", qui synthétise des informations provenant de sources d'actualités tierces. Chaque article généré est supervisé par un humain avant publication.</p>
+{% endblock %}
