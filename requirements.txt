@@ -1,5 +1,0 @@
-Jinja2
-beautifulsoup4
-tweepy
-google-generativeai
-requests
