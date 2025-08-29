@@ -1,0 +1,7 @@
+# Configuration minimale et propre pour Netlify
+[build]
+  # On dit à Netlify de ne lancer AUCUNE commande de build.
+  command = ""
+
+  # On dit à Netlify que le site à publier se trouve à la racine du dépôt.
+  publish = "/"
