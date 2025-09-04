@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech - Horizon Network</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-brand { font-family: 'Space Grotesk', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-white shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="flex items-center space-x-4">
+                <svg class="h-16 w-auto" viewBox="0 0 280 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 40 H 50" stroke="#1F2937" stroke-width="3"/>
+                    <path d="M10 40 A 20 20 0 0 1 50 40" stroke="#22C55E" stroke-width="3"/>
+                    <text x="70" y="48" font-family="Inter, sans-serif" font-size="38" font-weight="600" fill="#1F2937">HORIZON</text>
+                </svg>
+                <span class="text-2xl font-bold font-brand" style="color: #22C55E;">Tech</span>
+            </a>
+            <div>
+                <a href="/" class="px-4">Accueil</a>
+                <a href="/a-propos.html" class="px-4">À Propos</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+    
+    {% if featured_article %}
+    <section id="hero" class="container mx-auto px-4 py-8">
+        <h2 class="text-3xl font-bold mb-6 border-l-4 pl-4" style="border-color: #22C55E;">À la une</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="order-2 lg:order-1">
+                <p class="text-gray-500 text-sm mb-4">{{ featured_article.date }}</p>
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-4 leading-tight">{{ featured_article.title }}</h1>
+                <p class="text-gray-600 mb-6">{{ featured_article.summary }}</p>
+                <a href="{{ featured_article.url }}" class="inline-flex items-center text-lg font-semibold hover:underline group" style="color: #22C55E;">Lire l'analyse</a>
+            </div>
+            <div class="order-1 lg:order-2">
+                 <img src="{{ featured_article.image_url }}" alt="Image pour {{ featured_article.title }}" class="rounded-lg shadow-lg object-cover w-full h-80">
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <section class="container mx-auto px-4 pb-12">
+        <h2 class="text-2xl font-bold mb-4">Derniers articles</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            {% for article in latest_articles %}
+            <article class="rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow bg-white flex flex-col">
+                <a href="{{ article.url }}" class="block">
+                    <img src="{{ article.image_url }}" alt="Image pour {{ article.title }}" class="w-full h-40 object-cover">
+                </a>
+                <div class="p-5 flex flex-col flex-grow">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 flex-grow">
+                        <a href="{{ article.url }}" class="hover:underline">{{ article.title }}</a>
+                    </h3>
+                    <p class="text-sm text-gray-500">{{ article.date }}</p>
+                </div>
+            </article>
+            {% endfor %}
+            
+        </div>
+    </section>
+    
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 mt-12 py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Horizon Network. Construit avec une IA, pour la transparence.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
