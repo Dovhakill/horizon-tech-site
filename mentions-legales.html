@@ -1,28 +1,39 @@
-{% extends "base.html.j2" %}
-{% set page_url = self.path %}
-{% block title %}Mentions Légales - {{ site_name }}{% endblock %}
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Contact — Horizon Tech</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="/"><img src="/assets/logo-tech-dark.png" alt=""><span>Tech</span></a>
+    <nav class="menu"><a href="/">Accueil</a><a href="/topics.html">Sujets</a><a href="/about.html">À propos</a></nav>
+    <button class="burger" onclick="toggleMenu()">☰</button>
+  </div>
+</header>
 
-{% block content %}
-    <h1>Mentions Légales</h1>
-    
-    <h2>1. Éditeur du Site</h2>
-    <p>
-        <strong>Nom du site :</strong> {{ site_name }}<br>
-        <strong>Responsable de la publication :</strong> {{ editor_name }}<br>
-        <strong>Adresse :</strong> {{ editor_address }}<br>
-        <strong>Email :</strong> {{ contact_email }}<br>
-        <strong>SIREN :</strong> {{ company_siren or 'Non applicable' }}<br>
-        <strong>RCS :</strong> {{ company_rcs or 'Non applicable' }}
-    </p>
+<main class="container">
+  <h1 class="section-title">Contact</h1>
+  <div class="card">
+    <!-- Formulaire compatible Netlify (pas de backend nécessaire) -->
+    <form name="contact" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact">
+      <p><label>Nom<br><input type="text" name="name" required style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></label></p>
+      <p><label>Email<br><input type="email" name="email" required style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></label></p>
+      <p><label>Message<br><textarea name="message" required rows="5" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></textarea></label></p>
+      <p><button class="button" type="submit">Envoyer</button></p>
+      <p class="muted">Ou écris-nous : <a href="mailto:contact@exemple.tld">contact@exemple.tld</a></p>
+    </form>
+  </div>
+</main>
 
-    <h2>2. Hébergement</h2>
-    <p>
-        <strong>Hébergeur :</strong> {{ host_name }}<br>
-        <strong>Adresse :</strong> {{ host_address }}
-    </p>
-
-    <h2>3. Propriété Intellectuelle</h2>
-    <p>
-        L'ensemble de ce site relève de la législation sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés. Les articles générés par l'IA "Aurore" sont des œuvres dérivées basées sur des sources tierces et sont la propriété de l'éditeur du site. Le crédit des images utilisées est mentionné sur chaque article.
-    </p>
-{% endblock %}
+<footer class="site-footer"><div class="inner">© <span id="y"></span> Horizon Tech</div></footer>
+<script>
+  function toggleMenu(){const m=document.querySelector('.menu');m.style.display=m.style.display==='flex'?'none':'flex';m.style.flexDirection='column'}
+  document.getElementById('y').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
