@@ -1,0 +1,81 @@
+/* ===== Horizon Tech – styles globaux ===== */
+:root{
+  --brand:#0A7B5C;          /* vert principal (peut changer) */
+  --ink:#0f172a;            /* texte */
+  --muted:#64748b;          /* texte secondaire */
+  --line:#e5e7eb;           /* bordures */
+  --bg:#ffffff;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--ink); background:var(--bg);
+}
+
+/* Header */
+.site-header{border-bottom:1px solid var(--line); background:#fff}
+.nav{
+  max-width:1060px; margin:0 auto; padding:12px 16px;
+  display:flex; align-items:center; gap:16px; justify-content:space-between;
+}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none}
+.brand img{height:30px}
+.brand span{color:var(--brand); font-weight:800; font-size:18px}
+.menu{display:flex; gap:14px; align-items:center}
+.menu a{
+  color:#111827; text-decoration:none; padding:8px 10px; border-radius:10px;
+}
+.menu a:hover{background:#f3f4f6}
+.burger{display:none; border:1px solid var(--line); background:transparent; padding:6px 10px; border-radius:10px}
+
+/* Hero */
+.hero{
+  max-width:1060px; margin:22px auto 10px; padding:0 16px;
+  display:flex; align-items:center; gap:18px; flex-wrap:wrap;
+}
+.hero h1{font-size:30px; margin:2px 0}
+.hero p{color:var(--muted); margin:0}
+
+/* Main container */
+.container{max-width:1060px; margin:0 auto; padding:0 16px}
+
+/* Liste d’articles (le robot insère des <li>) */
+#latest-articles{
+  list-style:none; padding:0; margin:14px 0 40px;
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px;
+}
+#latest-articles li{
+  border:1px solid var(--line); border-radius:14px; padding:14px; background:#fff;
+  display:flex; flex-direction:column; gap:6px; min-height:120px;
+  transition:transform .06s ease, box-shadow .06s ease;
+}
+#latest-articles li:hover{transform:translateY(-1px); box-shadow:0 4px 16px rgba(0,0,0,.05)}
+#latest-articles li a{
+  color:#111827; text-decoration:none; font-weight:700; line-height:1.35; display:block;
+}
+#latest-articles li small{color:var(--muted)}
+
+/* Sections génériques */
+.section-title{font-size:22px; margin:10px 0 8px}
+
+/* Footer */
+.site-footer{
+  border-top:1px solid var(--line); margin-top:40px; color:var(--muted); background:#fff;
+}
+.site-footer .inner{max-width:1060px; margin:0 auto; padding:18px 16px; font-size:14px}
+.badge{display:inline-block; background:#eef2ff; color:#3730a3; padding:4px 8px; border-radius:999px; font-weight:700; font-size:12px}
+
+/* Utilitaires */
+.grid-2{display:grid; grid-template-columns:1fr; gap:18px}
+.card{border:1px solid var(--line); border-radius:14px; padding:16px; background:#fff}
+.card h2{margin:0 0 8px}
+a.button{display:inline-block; background:var(--brand); color:#fff; text-decoration:none; padding:10px 14px; border-radius:12px; font-weight:700}
+a.button:hover{opacity:.9}
+
+/* Responsive */
+@media (max-width:760px){
+  .menu{display:none}
+  .burger{display:block}
+}
