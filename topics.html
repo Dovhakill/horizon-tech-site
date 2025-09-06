@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Sujets — Horizon Tech</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="/"><img src="/assets/logo-tech-dark.png" alt=""><span>Tech</span></a>
+    <nav class="menu">
+      <a href="/">Accueil</a><a href="/topics.html">Sujets</a><a href="/about.html">À propos</a><a href="/contact.html">Contact</a>
+    </nav>
+    <button class="burger" onclick="toggleMenu()">☰</button>
+  </div>
+</header>
+
+<main class="container">
+  <h1 class="section-title">Sujets</h1>
+  <div class="grid-2">
+    <div class="card" id="enquetes">
+      <h2>Enquêtes & Scam Watch</h2>
+      <p>Dossiers rédigés à la main. Bientôt une page dédiée par enquête.</p>
+    </div>
+    <div class="card">
+      <h2>IA & LLM</h2>
+      <p>Modèles, agents, tooling, safety.</p>
+    </div>
+    <div class="card">
+      <h2>Blockchain / Crypto</h2>
+      <p>Infra, L2, DePIN, sécurité on-chain.</p>
+    </div>
+    <div class="card">
+      <h2>Cyber & Sécu</h2>
+      <p>Vulns, OPSEC, menace & défense.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="inner">© <span id="y"></span> Horizon Tech</div></footer>
+<script>
+  function toggleMenu(){const m=document.querySelector('.menu');m.style.display=m.style.display==='flex'?'none':'flex';m.style.flexDirection='column'}
+  document.getElementById('y').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
