@@ -1,73 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <title>Horizon Tech – Actus et enquêtes</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Horizon Tech — veille IA, blockchain, cybersécurité & enquêtes.">
-  <link rel="stylesheet" href="/assets/styles.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo-tech-favicon-32.png">
-  <link rel="icon" type="image/png" sizes="64x64" href="/assets/logo-tech-favicon-64.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/logo-tech-favicon-512.png">
+<meta charset="utf-8"/>
+<title>Horizon Tech – Actus et enquêtes</title>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Horizon Tech — veille IA, blockchain, cybersécurité &amp; enquêtes." name="description"/>
+<link href="/assets/styles.css" rel="stylesheet"/>
+<link href="/assets/logo-tech-favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/assets/logo-tech-favicon-64.png" rel="icon" sizes="64x64" type="image/png"/>
+<link href="/assets/logo-tech-favicon-512.png" rel="icon" sizes="512x512" type="image/png"/>
 </head>
 <body>
-  <header class="site-header">
-    <div class="nav">
-      <a class="brand" href="/">
-        <img src="/assets/logo-tech-dark.png" alt="Horizon Tech">
-        <span>Tech</span>
-      </a>
-      <nav class="menu" id="site-menu">
-        <a href="/">Accueil</a>
-        <a href="/topics.html">Sujets</a>
-        <a href="/about.html">À propos</a>
-        <a href="/contact.html">Contact</a>
-        <a href="/mentions-legales.html">Mentions légales</a>
-      </nav>
-      <button class="burger" aria-label="menu" onclick="toggleMenu()">☰</button>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div>
-      <h1>Derniers articles</h1>
-      <p>Veille technique, analyses et dossiers spéciaux — mis à jour automatiquement.</p>
-    </div>
-    <div><span class="badge">Généré par Aurore IA</span></div>
-  </section>
-
-  <main class="container">
-    <!-- Le bot ajoute ici les nouveaux articles -->
-    <ul id="latest-articles">
-      <!-- exemple statique (sera remplacé/complété par le bot)
+<header class="site-header">
+<div class="nav">
+<a class="brand" href="/">
+<img alt="Horizon Tech" src="/assets/logo-tech-dark.png"/>
+<span>Tech</span>
+</a>
+<nav class="menu" id="site-menu">
+<a href="/">Accueil</a>
+<a href="/topics.html">Sujets</a>
+<a href="/about.html">À propos</a>
+<a href="/contact.html">Contact</a>
+<a href="/mentions-legales.html">Mentions légales</a>
+</nav>
+<button aria-label="menu" class="burger" onclick="toggleMenu()">☰</button>
+</div>
+</header>
+<section class="hero">
+<div>
+<h1>Derniers articles</h1>
+<p>Veille technique, analyses et dossiers spéciaux — mis à jour automatiquement.</p>
+</div>
+<div><span class="badge">Généré par Aurore IA</span></div>
+</section>
+<main class="container">
+<!-- Le bot ajoute ici les nouveaux articles -->
+<ul id="latest-articles"><li><a href="/articles/bittensor-tao-une-approche-blockchain-pour-lia.html">Bittensor (TAO) : Une approche blockchain pour l'IA</a><small>— 2025-08-06</small></li>
+<!-- exemple statique (sera remplacé/complété par le bot)
       <li>
         <a href="/articles/exemple.html">Exemple de carte d’article</a>
         <small>— 2025-07-29</small>
       </li>
       -->
-    </ul>
-
-    <section class="grid-2">
-      <div class="card">
-        <h2>Enquêtes & dossiers</h2>
-        <p>Des papiers de fond publiés à la main (fraudes, scams, sécurité…).</p>
-        <a class="button" href="/topics.html#enquetes">Voir les sujets</a>
-      </div>
-      <div class="card">
-        <h2>Newsletter</h2>
-        <p>Un récap des meilleures infos 1×/semaine. Pas de spam.</p>
-        <a class="button" href="mailto:contact@exemple.tld?subject=Inscription%20Newsletter">S’inscrire</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="inner">
+</ul>
+<section class="grid-2">
+<div class="card">
+<h2>Enquêtes &amp; dossiers</h2>
+<p>Des papiers de fond publiés à la main (fraudes, scams, sécurité…).</p>
+<a class="button" href="/topics.html#enquetes">Voir les sujets</a>
+</div>
+<div class="card">
+<h2>Newsletter</h2>
+<p>Un récap des meilleures infos 1×/semaine. Pas de spam.</p>
+<a class="button" href="mailto:contact@exemple.tld?subject=Inscription%20Newsletter">S’inscrire</a>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="inner">
       © <span id="y"></span> Horizon Tech · <a href="/mentions-legales.html">Mentions légales</a> · <a href="/privacy.html">Confidentialité</a>
-    </div>
-  </footer>
-
-  <script>
+</div>
+</footer>
+<script>
     function toggleMenu(){
       const m=document.getElementById('site-menu');
       m.style.display = (m.style.display==='flex'?'none':'flex');
