@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Conditions d’utilisation — Horizon Tech</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="/"><img src="/assets/logo-tech-dark.png" alt=""><span>Tech</span></a>
+    <nav class="menu"><a href="/">Accueil</a></nav>
+    <button class="burger" onclick="toggleMenu()">☰</button>
+  </div>
+</header>
+
+<main class="container">
+  <h1 class="section-title">Conditions d’utilisation</h1>
+  <div class="card">
+    <p>En accédant au site, vous acceptez de l’utiliser conformément à la loi et aux présentes conditions. Aucune recommandation financière n’est fournie.</p>
+    <p>Les liens externes sont fournis à titre informatif : l’éditeur ne contrôle pas leur contenu.</p>
+    <p>Vous pouvez citer nos contenus avec lien source. Toute republication intégrale requiert une autorisation écrite.</p>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="inner">© <span id="y"></span> Horizon Tech</div></footer>
+<script>
+  function toggleMenu(){const m=document.querySelector('.menu');m.style.display=m.style.display==='flex'?'none':'flex';m.style.flexDirection='column'}
+  document.getElementById('y').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
