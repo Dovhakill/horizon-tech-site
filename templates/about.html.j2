@@ -1,8 +1,33 @@
-{% extends "base.html.j2" %}
-{% set page_url = self.path %}
-{% block title %}À Propos - {{ site_name }}{% endblock %}
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>À propos — Horizon Tech</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="/"><img src="/assets/logo-tech-dark.png" alt=""><span>Tech</span></a>
+    <nav class="menu"><a href="/">Accueil</a><a href="/topics.html">Sujets</a><a href="/contact.html">Contact</a></nav>
+    <button class="burger" onclick="toggleMenu()">☰</button>
+  </div>
+</header>
 
-{% block content %}
-    <h1>À Propos de L'Horizon Libre</h1>
-    <p>Présentation du projet, de l'équipe, et de notre mission. Mention spéciale à notre IA Aurore qui travaille sans relâche pour vous informer.</p>
-{% endblock %}
+<main class="container">
+  <h1 class="section-title">À propos</h1>
+  <div class="card">
+    <p><strong>Horizon Tech</strong> est un média indépendant couvrant IA, blockchain et cybersécurité. Les brèves sont générées par
+      <em>Aurore IA</em> (sélection + résumé), les enquêtes longues sont rédigées à la main.</p>
+    <p>Contact presse/partenariats : <a href="mailto:contact@exemple.tld">contact@exemple.tld</a></p>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="inner">© <span id="y"></span> Horizon Tech</div></footer>
+<script>
+  function toggleMenu(){const m=document.querySelector('.menu');m.style.display=m.style.display==='flex'?'none':'flex';m.style.flexDirection='column'}
+  document.getElementById('y').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
