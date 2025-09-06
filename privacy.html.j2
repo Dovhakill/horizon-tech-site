@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Confidentialité — Horizon Tech</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="/"><img src="/assets/logo-tech-dark.png" alt=""><span>Tech</span></a>
+    <nav class="menu"><a href="/">Accueil</a><a href="/mentions-legales.html">Mentions légales</a></nav>
+    <button class="burger" onclick="toggleMenu()">☰</button>
+  </div>
+</header>
+
+<main class="container">
+  <h1 class="section-title">Politique de confidentialité</h1>
+  <div class="card">
+    <p><strong>Responsable du traitement :</strong> Éditeur d’Horizon Tech (voir mentions légales).</p>
+    <p><strong>Données collectées :</strong> formulaire de contact (nom, email, message). Aucune donnée sensible n’est requise.</p>
+    <p><strong>Finalités :</strong> répondre aux messages reçus et gérer la relation avec les lecteurs.</p>
+    <p><strong>Base légale :</strong> intérêt légitime (art. 6-1 f du RGPD).</p>
+    <p><strong>Durées de conservation :</strong> 12 mois pour les messages, sauf obligation légale contraire.</p>
+    <p><strong>Destinataires :</strong> équipe éditoriale. Pas de cession à des tiers commerciaux.</p>
+    <p><strong>Hébergement :</strong> Netlify (USA). Les formulaires Netlify peuvent transférer les données aux USA ; clauses contractuelles types applicables.</p>
+    <p><strong>Vos droits :</strong> accès, rectification, effacement, opposition, limitation, portabilité. Exercez-les à <a href="mailto:privacy@exemple.tld">privacy@exemple.tld</a>.</p>
+    <p><strong>Cookies/analytics :</strong> par défaut, aucune mesure d’audience déposant des cookies. Si vous ajoutez un outil, mettez à jour cette page.</p>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="inner">© <span id="y"></span> Horizon Tech</div></footer>
+<script>
+  function toggleMenu(){const m=document.querySelector('.menu');m.style.display=m.style.display==='flex'?'none':'flex';m.style.flexDirection='column'}
+  document.getElementById('y').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
