@@ -1,22 +1,39 @@
-{% extends "base.html.j2" %}
-{% set page_url = self.path %}
-{% block title %}Contact - {{ site_name }}{% endblock %}
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Contact — Horizon Tech</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="/"><img src="/assets/logo-tech-dark.png" alt=""><span>Tech</span></a>
+    <nav class="menu"><a href="/">Accueil</a><a href="/topics.html">Sujets</a><a href="/about.html">À propos</a></nav>
+    <button class="burger" onclick="toggleMenu()">☰</button>
+  </div>
+</header>
 
-{% block content %}
-    <h1>Nous Contacter</h1>
-    <p>Pour toute question, veuillez nous envoyer un email à <a href="mailto:{{ contact_email }}">{{ contact_email }}</a> ou utiliser le formulaire ci-dessous.</p>
-    
-    <form action="..." method="POST">
-        <label for="name">Nom :</label><br>
-        <input type="text" id="name" name="name" required><br>
-        <label for="email">Email :</label><br>
-        <input type="email" id="email" name="email" required><br>
-        <label for="message">Message :</label><br>
-        <textarea id="message" name="message" required></textarea><br>
-        
-        <input type="checkbox" id="newsletter_signup" name="newsletter_signup">
-        <label for="newsletter_signup">Je souhaite m'inscrire à la newsletter. J'accepte que mon email soit utilisé pour recevoir les publications de {{ site_name }}. (<a href="/privacy-policy.html" target="_blank">Voir notre politique de confidentialité</a>).</label><br>
-        
-        <button type="submit">Envoyer</button>
+<main class="container">
+  <h1 class="section-title">Contact</h1>
+  <div class="card">
+    <!-- Formulaire compatible Netlify (pas de backend nécessaire) -->
+    <form name="contact" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact">
+      <p><label>Nom<br><input type="text" name="name" required style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></label></p>
+      <p><label>Email<br><input type="email" name="email" required style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></label></p>
+      <p><label>Message<br><textarea name="message" required rows="5" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></textarea></label></p>
+      <p><button class="button" type="submit">Envoyer</button></p>
+      <p class="muted">Ou écris-nous : <a href="mailto:contact@exemple.tld">contact@exemple.tld</a></p>
     </form>
-{% endblock %}
+  </div>
+</main>
+
+<footer class="site-footer"><div class="inner">© <span id="y"></span> Horizon Tech</div></footer>
+<script>
+  function toggleMenu(){const m=document.querySelector('.menu');m.style.display=m.style.display==='flex'?'none':'flex';m.style.flexDirection='column'}
+  document.getElementById('y').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
